@@ -18,6 +18,8 @@ jobs:
           scope: '@neohsuan'
       - run: npm ci
       - run: npm test
+      - name: Use GitHub Packages scope
+        run: npm pkg set name=@neohsuan/tw-utils publishConfig.registry=https://npm.pkg.github.com
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

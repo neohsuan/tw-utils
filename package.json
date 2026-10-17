@@ -1,6 +1,6 @@
 {
-  "name": "@neohsuan/tw-utils",
-  "version": "1.0.0",
+  "name": "@hsuan741320/tw-utils",
+  "version": "1.0.1",
   "description": "TypeScript utilities for Taiwan identifiers, invoice carriers and ROC dates",
   "type": "module",
   "main": "./dist/index.js",
@@ -44,7 +44,7 @@
     "vitest": "5.0.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
