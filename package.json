@@ -1,5 +1,5 @@
 {
-  "name": "@hsuan741320/tw-utils",
+  "name": "@hsuan741220/tw-utils",
   "version": "1.0.1",
   "description": "TypeScript utilities for Taiwan identifiers, invoice carriers and ROC dates",
   "type": "module",

@@ -7,7 +7,7 @@
 從 npm 安裝：
 
 ```sh
-npm install @hsuan741320/tw-utils
+npm install @hsuan741220/tw-utils
 ```
 
 （同一套件也以 `@neohsuan/tw-utils` 發布於 GitHub Packages，需在 `.npmrc` 設定 `@neohsuan:registry=https://npm.pkg.github.com`。）
@@ -23,7 +23,7 @@ import {
   gregorianToRocYear,
   rocToGregorianDate,
   gregorianToRocDate,
-} from '@hsuan741320/tw-utils';
+} from '@hsuan741220/tw-utils';
 
 isValidBusinessNumber('04595252'); // true，2023 新制
 isValidMobileBarcode('/0AZ.+-9'); // true
@@ -94,7 +94,7 @@ It validates business numbers using the 2023 modulo-5 checksum (including the se
 
 Use `rocToGregorianYear` / `gregorianToRocYear` for numeric years and `rocToGregorianDate` / `gregorianToRocDate` for date strings such as `113/01/05`. Supported years are ROC 1–8088 / Gregorian 1912–9999. Dates preserve `/` or `-` separators, pad month/day, and check leap years without timezone-dependent parsing. Invalid types throw `TypeError`; invalid formats, ranges or calendar dates throw `RangeError`.
 
-Install from npm: `npm install @hsuan741320/tw-utils`. The same package is also published to GitHub Packages as `@neohsuan/tw-utils` (add `@neohsuan:registry=https://npm.pkg.github.com` to `.npmrc`). Run `npm test` and `npm run typecheck` for verification. The runtime library supports Node.js 20+. For development, Node.js 22.12+ is recommended because Vitest 5 declares that minimum; the pinned toolchain also passed these tests on Node.js 20.19.2, with an engine warning during installation. Engine-strict installations require a supported Vitest Node.js version. Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
+Install from npm: `npm install @hsuan741220/tw-utils`. The same package is also published to GitHub Packages as `@neohsuan/tw-utils` (add `@neohsuan:registry=https://npm.pkg.github.com` to `.npmrc`). Run `npm test` and `npm run typecheck` for verification. The runtime library supports Node.js 20+. For development, Node.js 22.12+ is recommended because Vitest 5 declares that minimum; the pinned toolchain also passed these tests on Node.js 20.19.2, with an engine warning during installation. Engine-strict installations require a supported Vitest Node.js version. Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 授權 / License
 
