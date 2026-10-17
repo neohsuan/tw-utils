@@ -98,6 +98,12 @@ Use `rocToGregorianYear` / `gregorianToRocYear` for numeric years and `rocToGreg
 
 Install from npm: `npm install @hsuan741220/tw-utils`. Both ESM (`import`) and CommonJS (`require`) are supported. The same package is also published to GitHub Packages as `@neohsuan/tw-utils` (add `@neohsuan:registry=https://npm.pkg.github.com` to `.npmrc`). Run `npm test` and `npm run typecheck` for verification. The runtime library supports Node.js 20+. For development, Node.js 22.12+ is recommended because Vitest 5 declares that minimum; the pinned toolchain also passed these tests on Node.js 20.19.2, with an engine warning during installation. Engine-strict installations require a supported Vitest Node.js version. Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## 相關專案 / Related projects
+
+- [tw-holidays](https://github.com/neohsuan/tw-holidays)：台灣國定假日與補班日曆、工作日計算 / Taiwan public holidays, make-up workdays and business-day arithmetic (`@hsuan741220/tw-holidays`)
+- [tw-address](https://github.com/neohsuan/tw-address)：台灣地址解析與正規化、3 碼郵遞區號 / Taiwan address parser & normalizer with 3-digit postal codes (`@hsuan741220/tw-address`)
+- [tw-einvoice-qr](https://github.com/neohsuan/tw-einvoice-qr)：電子發票 QR Code／一維條碼解析與統一發票對獎 / Taiwan e-invoice QR & barcode parser and lottery checker (`@hsuan741220/tw-einvoice-qr`)
+
 ## 授權 / License
 
 [MIT](LICENSE) © 2026 neohsuan
