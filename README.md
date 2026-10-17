@@ -1,6 +1,6 @@
 # tw-utils
 
-臺灣常用資料驗證與民國日期轉換工具。以 TypeScript 撰寫，提供 ESM 與型別宣告，無執行期相依套件。支援 Node.js 20 以上。
+臺灣常用資料驗證與民國日期轉換工具。以 TypeScript 撰寫，提供 ESM 與 CommonJS 及型別宣告，無執行期相依套件。支援 Node.js 20 以上。
 
 ## 安裝與使用
 
@@ -78,7 +78,7 @@ npm test
 npm run build
 ```
 
-`npm run test:watch` 啟用 Vitest 監看模式。`tsc` 將 ESM 與 `.d.ts` 輸出至 `dist/`。GitHub Actions 在 Node.js 20 執行相同檢查。
+`npm run test:watch` 啟用 Vitest 監看模式。`tsup` 將 ESM、CJS 與 `.d.ts`／`.d.cts` 輸出至 `dist/`。GitHub Actions 在 Node.js 20 執行相同檢查。
 
 本函式庫執行期支援 Node.js 20 以上。開發工具固定使用 Vitest 5.0.3 與 Vite 6.4.4；Vitest 官方宣告需要 Node.js 22.12 以上，因此建議開發環境使用 Node.js 22.12 以上。此組測試亦已在 Node.js 20.19.2 執行通過；Node.js 20 安裝開發相依套件時會出現 `EBADENGINE` 警告，啟用 `engine-strict` 的環境會拒絕安裝。
 
@@ -90,7 +90,7 @@ npm run build
 
 ## English
 
-`tw-utils` is a dependency-free TypeScript library for Taiwan identifiers and ROC (Minguo) dates. It ships ESM and TypeScript declarations and supports Node.js 20+.
+`tw-utils` is a dependency-free TypeScript library for Taiwan identifiers and ROC (Minguo) dates. It ships ESM + CommonJS builds with TypeScript declarations and supports Node.js 20+.
 
 It validates business numbers using the 2023 modulo-5 checksum (including the seventh-digit-7 exception), mobile invoice carrier barcodes, citizen digital certificate barcodes, national IDs, and both old and 2021 resident certificate numbers. Validators accept `unknown` and return a boolean; inputs must match strictly, including uppercase ASCII letters. Validation does not verify issuance or ownership.
 
