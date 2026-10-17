@@ -1,15 +1,22 @@
 {
   "name": "@hsuan741220/tw-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TypeScript utilities for Taiwan identifiers, invoice carriers and ROC dates",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
@@ -18,8 +25,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "build": "tsup",
+    "test": "npm run build && vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.test.json",
     "prepack": "npm run build"
@@ -39,6 +46,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "24.19.1",
+    "tsup": "^8.5.1",
     "typescript": "~5.9.3",
     "vite": "6.4.4",
     "vitest": "5.0.3"
@@ -49,5 +57,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neohsuan/tw-utils.git"
+  },
+  "module": "./dist/index.js",
+  "overrides": {
+    "tsup": {
+      "esbuild": "^0.28.2"
+    }
   }
 }
