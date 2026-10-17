@@ -1,5 +1,5 @@
 {
-  "name": "tw-utils",
+  "name": "@neohsuan/tw-utils",
   "version": "1.0.0",
   "description": "TypeScript utilities for Taiwan identifiers, invoice carriers and ROC dates",
   "type": "module",
@@ -11,7 +11,11 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -20,14 +24,30 @@
     "typecheck": "tsc -p tsconfig.test.json",
     "prepack": "npm run build"
   },
-  "engines": { "node": ">=20" },
-  "keywords": ["taiwan", "typescript", "checksum", "roc", "統一編號", "身分證"],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "taiwan",
+    "typescript",
+    "checksum",
+    "roc",
+    "統一編號",
+    "身分證"
+  ],
   "author": "neohsuan",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "24.19.1",
     "typescript": "~5.9.3",
-    "vitest": "5.0.3",
     "vite": "6.4.4",
-    "@types/node": "24.19.1"
+    "vitest": "5.0.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neohsuan/tw-utils.git"
   }
 }

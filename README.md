@@ -4,14 +4,11 @@
 
 ## 安裝與使用
 
-套件名稱為 `tw-utils`；此專案尚未進行 npm 發布。可先在本機建置並封裝：
+套件以 `@neohsuan/tw-utils` 發布於 GitHub Packages。先在專案的 `.npmrc` 指定 registry（需具 `read:packages` 權限的 GitHub token）：
 
 ```sh
-npm install
-npm run build
-npm pack
-# 在使用端專案安裝本機產生的套件檔
-npm install /path/to/tw-utils-1.0.0.tgz
+echo "@neohsuan:registry=https://npm.pkg.github.com" >> .npmrc
+npm install @neohsuan/tw-utils
 ```
 
 ```ts
@@ -25,7 +22,7 @@ import {
   gregorianToRocYear,
   rocToGregorianDate,
   gregorianToRocDate,
-} from 'tw-utils';
+} from '@neohsuan/tw-utils';
 
 isValidBusinessNumber('04595252'); // true，2023 新制
 isValidMobileBarcode('/0AZ.+-9'); // true
@@ -96,7 +93,7 @@ It validates business numbers using the 2023 modulo-5 checksum (including the se
 
 Use `rocToGregorianYear` / `gregorianToRocYear` for numeric years and `rocToGregorianDate` / `gregorianToRocDate` for date strings such as `113/01/05`. Supported years are ROC 1–8088 / Gregorian 1912–9999. Dates preserve `/` or `-` separators, pad month/day, and check leap years without timezone-dependent parsing. Invalid types throw `TypeError`; invalid formats, ranges or calendar dates throw `RangeError`.
 
-This project has not been published to npm. To use locally, run `npm install`, `npm run build`, and `npm pack`, then install the resulting tarball in your consuming project. Run `npm test` and `npm run typecheck` for verification. The runtime library supports Node.js 20+. For development, Node.js 22.12+ is recommended because Vitest 5 declares that minimum; the pinned toolchain also passed these tests on Node.js 20.19.2, with an engine warning during installation. Engine-strict installations require a supported Vitest Node.js version. Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
+Published to GitHub Packages as `@neohsuan/tw-utils`: add `@neohsuan:registry=https://npm.pkg.github.com` to your `.npmrc` (with a GitHub token that has `read:packages`), then `npm install @neohsuan/tw-utils`. Run `npm test` and `npm run typecheck` for verification. The runtime library supports Node.js 20+. For development, Node.js 22.12+ is recommended because Vitest 5 declares that minimum; the pinned toolchain also passed these tests on Node.js 20.19.2, with an engine warning during installation. Engine-strict installations require a supported Vitest Node.js version. Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 授權 / License
 
